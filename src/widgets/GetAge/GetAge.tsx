@@ -33,10 +33,11 @@ const GetAge = () => {
       })
       .catch(err => {
         if (err.message === 'skipped') {
-          setLoadingState('ok')
+          setLoadingState(age ? 'ok' : 'failed')
           return
         }
         setLoadingState('failed')
+        setAge('')
       });
   }
 
